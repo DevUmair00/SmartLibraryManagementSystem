@@ -1,0 +1,9 @@
+E:\Projects\Library Management System\LibraryManagement\obj\Debug\net8.0-windows\Smart_Library_Management_System.Fines.Fine_Form.resources
+E:\Projects\Library Management System\LibraryManagement\obj\Debug\net8.0-windows\Smart_Library_Management_System.Members.Member_Form.resources
+E:\Projects\Library Management System\LibraryManagement\obj\Debug\net8.0-windows\Smart_Library_Management_System.Smart_Library.resources
+E:\Projects\Library Management System\LibraryManagement\obj\Debug\net8.0-windows\Smart Library Management System.csproj.GenerateResource.cache
+E:\Projects\Library Management System\LibraryManagement\obj\Debug\net8.0-windows\Smart Library Management System.GeneratedMSBuildEditorConfig.editorconfig
+E:\Projects\Library Management System\LibraryManagement\obj\Debug\net8.0-windows\Smart Library Management System.AssemblyInfoInputs.cache
+E:\Projects\Library Management System\LibraryManagement\obj\Debug\net8.0-windows\Smart Library Management System.AssemblyInfo.cs
+E:\Projects\Library Management System\LibraryManagement\obj\Debug\net8.0-windows\Smart Library Management System.csproj.CoreCompileInputs.cache
+E:\Projects\Library Management System\LibraryManagement\obj\Debug\net8.0-windows\Smart Library Management System.sourcelink.json

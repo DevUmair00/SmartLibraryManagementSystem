@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Projects\\Library Management System\\Smart Library Management System\\Smart Library Management System.csproj",
+      "projectUniqueName": "E:\\Projects\\Library Management System\\LibraryManagement\\Smart Library Management System.csproj",
       "projectName": "Smart Library Management System",
-      "projectPath": "E:\\Projects\\Library Management System\\Smart Library Management System\\Smart Library Management System.csproj",
+      "projectPath": "E:\\Projects\\Library Management System\\LibraryManagement\\Smart Library Management System.csproj",
       "packagesPath": "C:\\Users\\UR Umair\\.nuget\\packages\\",
-      "outputPath": "E:\\Projects\\Library Management System\\Smart Library Management System\\obj\\",
+      "outputPath": "E:\\Projects\\Library Management System\\LibraryManagement\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
