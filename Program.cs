@@ -1,3 +1,5 @@
+using Smart_Library_Management_System.Books;
+
 namespace Smart_Library_Management_System
 {
     internal static class Program
@@ -8,6 +10,7 @@ namespace Smart_Library_Management_System
         [STAThread]
         static void Main()
         {
+
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();

@@ -1,3 +1,5 @@
+using Smart_Library_Management_System.Books;
+
 namespace Smart_Library_Management_System
 {
     public partial class Smart_Library : Form
@@ -5,6 +7,12 @@ namespace Smart_Library_Management_System
         public Smart_Library()
         {
             InitializeComponent();
+        }
+
+        private void BM_btn_Click(object sender, EventArgs e)
+        {
+            var bookForm = new BookForm();
+            bookForm.ShowDialog();
         }
     }
 }

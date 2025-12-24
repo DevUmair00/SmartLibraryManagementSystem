@@ -43,6 +43,7 @@
             author_id = new DataGridViewTextBoxColumn();
             author_name = new DataGridViewTextBoxColumn();
             author_nationality = new DataGridViewTextBoxColumn();
+            totalBooks = new DataGridViewTextBoxColumn();
             author_availableBooks = new DataGridViewComboBoxColumn();
             ((System.ComponentModel.ISupportInitialize)viewBookGrid).BeginInit();
             SuspendLayout();
@@ -129,7 +130,7 @@
             viewBookGrid.AllowUserToResizeColumns = false;
             viewBookGrid.AllowUserToResizeRows = false;
             viewBookGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            viewBookGrid.Columns.AddRange(new DataGridViewColumn[] { author_id, author_name, author_nationality, author_availableBooks });
+            viewBookGrid.Columns.AddRange(new DataGridViewColumn[] { author_id, author_name, author_nationality, totalBooks, author_availableBooks });
             viewBookGrid.Location = new Point(289, 90);
             viewBookGrid.Name = "viewBookGrid";
             viewBookGrid.RowHeadersVisible = false;
@@ -189,10 +190,17 @@
             author_nationality.ReadOnly = true;
             author_nationality.Resizable = DataGridViewTriState.False;
             // 
+            // totalBooks
+            // 
+            totalBooks.HeaderText = "Total Available";
+            totalBooks.Name = "totalBooks";
+            totalBooks.ReadOnly = true;
+            totalBooks.Width = 130;
+            // 
             // author_availableBooks
             // 
             author_availableBooks.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            author_availableBooks.HeaderText = "Available Books";
+            author_availableBooks.HeaderText = "Books List";
             author_availableBooks.Name = "author_availableBooks";
             author_availableBooks.ReadOnly = true;
             author_availableBooks.Resizable = DataGridViewTriState.False;
@@ -244,6 +252,7 @@
         private DataGridViewTextBoxColumn author_id;
         private DataGridViewTextBoxColumn author_name;
         private DataGridViewTextBoxColumn author_nationality;
+        private DataGridViewTextBoxColumn totalBooks;
         private DataGridViewComboBoxColumn author_availableBooks;
     }
 }

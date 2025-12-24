@@ -66,6 +66,7 @@
             BM_btn.TabIndex = 2;
             BM_btn.Text = "Book Management";
             BM_btn.UseVisualStyleBackColor = true;
+            BM_btn.Click += BM_btn_Click;
             // 
             // MM_btn
             // 

@@ -26,10 +26,10 @@ namespace Smart_Library_Management_System.Borrows
             ReturnDate = ReturnDate;
         }
 
-        public override string ToString()
-        {
-            return $"{BorrowID},{BookID},{MemberID},{BorrowDate;yyyy-MM-dd},{DueDate;yyyy-MM-dd},{ReturnDate}";
-        }
+        //public override string ToString()
+        //{
+        //    return $"{BorrowID},{BookID},{MemberID},{BorrowDate;yyyy-MM-dd},{DueDate;yyyy-MM-dd},{ReturnDate}";
+        //}
 
     }
 }
