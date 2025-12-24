@@ -7,3 +7,14 @@ E:\Projects\Library Management System\LibraryManagement\obj\Debug\net8.0-windows
 E:\Projects\Library Management System\LibraryManagement\obj\Debug\net8.0-windows\Smart Library Management System.AssemblyInfo.cs
 E:\Projects\Library Management System\LibraryManagement\obj\Debug\net8.0-windows\Smart Library Management System.csproj.CoreCompileInputs.cache
 E:\Projects\Library Management System\LibraryManagement\obj\Debug\net8.0-windows\Smart Library Management System.sourcelink.json
+E:\Projects\Library Management System\LibraryManagement\bin\Debug\net8.0-windows\Smart Library Management System.exe
+E:\Projects\Library Management System\LibraryManagement\bin\Debug\net8.0-windows\Smart Library Management System.deps.json
+E:\Projects\Library Management System\LibraryManagement\bin\Debug\net8.0-windows\Smart Library Management System.runtimeconfig.json
+E:\Projects\Library Management System\LibraryManagement\bin\Debug\net8.0-windows\Smart Library Management System.dll
+E:\Projects\Library Management System\LibraryManagement\bin\Debug\net8.0-windows\Smart Library Management System.pdb
+E:\Projects\Library Management System\LibraryManagement\obj\Debug\net8.0-windows\Smart_Library_Management_System.Books.BookForm.resources
+E:\Projects\Library Management System\LibraryManagement\obj\Debug\net8.0-windows\Smart Library Management System.dll
+E:\Projects\Library Management System\LibraryManagement\obj\Debug\net8.0-windows\refint\Smart Library Management System.dll
+E:\Projects\Library Management System\LibraryManagement\obj\Debug\net8.0-windows\Smart Library Management System.pdb
+E:\Projects\Library Management System\LibraryManagement\obj\Debug\net8.0-windows\Smart Library Management System.genruntimeconfig.cache
+E:\Projects\Library Management System\LibraryManagement\obj\Debug\net8.0-windows\ref\Smart Library Management System.dll

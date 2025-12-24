@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Smart_Library_Management_System.Borrows
 {
-    internal class BorrowSerive 
+    internal class BorrowService 
     {
 
     }

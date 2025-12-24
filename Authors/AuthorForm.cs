@@ -8,16 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Smart_Library_Management_System.Members
+namespace Smart_Library_Management_System.Authors
 {
-    public partial class Member_Form : Form
+    public partial class AuthorForm : Form
     {
-        public Member_Form()
+        public AuthorForm()
         {
             InitializeComponent();
         }
 
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        private void AuthorForm_Load(object sender, EventArgs e)
         {
 
         }
