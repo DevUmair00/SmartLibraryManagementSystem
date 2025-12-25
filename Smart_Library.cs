@@ -1,3 +1,4 @@
+using Smart_Library_Management_System.Authors;
 using Smart_Library_Management_System.Books;
 
 namespace Smart_Library_Management_System
@@ -13,6 +14,12 @@ namespace Smart_Library_Management_System
         {
             var bookForm = new BookForm();
             bookForm.ShowDialog();
+        }
+
+        private void AM_btn_Click(object sender, EventArgs e)
+        {
+            var authorForm = new AuthorForm();
+            authorForm.ShowDialog();
         }
     }
 }

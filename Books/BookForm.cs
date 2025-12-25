@@ -14,6 +14,7 @@ namespace Smart_Library_Management_System.Books
     public partial class BookForm : Form
     {
         private readonly BookService _bookService;
+        private readonly AuthorService _authorService = new AuthorService();
         private int _selectedBookId = 0; // Tracks the ID for Update/Delete
 
         public BookForm()
@@ -27,6 +28,7 @@ namespace Smart_Library_Management_System.Books
             LoadData();
             PopulateCategories();
             LoadAuthors();
+            LoadAuthorComboBox();
         }
 
         // --- Initialization ---
@@ -53,46 +55,48 @@ namespace Smart_Library_Management_System.Books
 
         private void LoadAuthors()
         {
-            // Assuming you have an AuthorService or Repo
-            // This is crucial for getting the AuthorID
-            AuthorRepo authorRepo = new AuthorRepo();
-            //cmbAuthor.DataSource = authorRepo.GetAllAuthors();
+            AuthorService authorService = new AuthorService();
+            DataTable dt = authorService.GetAuthorList();
+
+            cmbAuthor.DataSource = dt;
             cmbAuthor.DisplayMember = "FullName";
-            cmbAuthor.ValueMember = "AuthorID";
+            cmbAuthor.ValueMember = "AuthorID"; // This MUST match the SQL column name exactly
         }
 
         // --- Event Handlers ---
 
         private void btnAdd_Click_1(object sender, EventArgs e)
         {
-            var book = new BookModel
+            // Debugging Tip: Add a breakpoint here to see what 'authorId' actually is
+            int authorId = Convert.ToInt32(cmbAuthor.SelectedValue);
+
+            var newBook = new BookModel
             {
                 Title = txtTitle.Text,
                 ISBN = txtISBN.Text,
-                AuthorName = cmbAuthor.Text,
+                AuthorID = authorId, // This ID must exist in the dbo.Authors table
                 Category = cmbCategory.Text,
                 CurrentStatus = "Available"
             };
 
-            string result = _bookService.CreateBook(book);
+            string result = _bookService.CreateBook(newBook);
             MessageBox.Show(result);
-            if (result == "Success") RefreshUI();
         }
 
-        //private void LoadAuthorComboBox()
-        //{
-        //    // 1. Get your data from the Author Service/Repo
-        //    DataTable dtAuthors = _authorService.GetAllAuthors();
+        private void LoadAuthorComboBox()
+        {
+            //// 1. Get your data from the Author Service/Repo
+            //DataTable dtAuthors = _authorService.GetAllAuthors();
 
-        //    // 2. Bind to the ComboBox
-        //    cmbAuthor.DataSource = dtAuthors;
+            // 2. Bind to the ComboBox
+            cmbAuthor.DataSource = _authorService.GetAuthorList();
 
-        //    // This is what the user SEES
-        //    cmbAuthor.DisplayMember = "FullName";
+            // This is what the user SEES
+            cmbAuthor.DisplayMember = "FullName";
 
-        //    // This is what the code "GRABS" behind the scenes
-        //    cmbAuthor.ValueMember = "AuthorID";
-        //}
+            // This is what the code "GRABS" behind the scenes
+            cmbAuthor.ValueMember = "AuthorID";
+        }
         private void btnUpdate_Click_1(object sender, EventArgs e)
         {
             if (_selectedBookId == 0) { MessageBox.Show("Select a book first!"); return; }

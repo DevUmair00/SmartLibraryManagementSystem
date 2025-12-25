@@ -56,6 +56,7 @@
             AM_btn.TabIndex = 1;
             AM_btn.Text = "Author Management";
             AM_btn.UseVisualStyleBackColor = true;
+            AM_btn.Click += AM_btn_Click;
             // 
             // BM_btn
             // 
