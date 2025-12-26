@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Smart_Library_Management_System.Borrows
+namespace Smart_Library_Management_System.Borrowing
 {
     public class BorrowModel
     {
@@ -13,23 +9,18 @@ namespace Smart_Library_Management_System.Borrows
         public int MemberID { get; set; }
         public DateTime BorrowDate { get; set; }
         public DateTime DueDate { get; set; }
-        public DateTime ReturnDate { get; set; }
+        public DateTime? ReturnDate { get; set; } // Nullable: only filled when book is returned
 
         public BorrowModel() { }
-        public BorrowModel(int BorrowID, int BookID, int MemberID, DateTime BorrowDate, DateTime DueDate, DateTime ReturnDate)
+
+        // Constructor for creating a new borrow record
+        public BorrowModel(int bookId, int memberId, int daysToKeep)
         {
-            BorrowID = BorrowID;
-            BookID = BookID;
-            MemberID = MemberID;
-            BorrowDate = BorrowDate;
-            DueDate = DueDate;
-            ReturnDate = ReturnDate;
+            BookID = bookId;
+            MemberID = memberId;
+            BorrowDate = DateTime.Now;
+            DueDate = DateTime.Now.AddDays(daysToKeep);
+            ReturnDate = null;
         }
-
-        //public override string ToString()
-        //{
-        //    return $"{BorrowID},{BookID},{MemberID},{BorrowDate;yyyy-MM-dd},{DueDate;yyyy-MM-dd},{ReturnDate}";
-        //}
-
     }
 }

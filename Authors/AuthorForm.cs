@@ -133,5 +133,15 @@ namespace Smart_Library_Management_System.Authors
         {
 
         }
+
+        private void AuthorForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ViewMember_btn_Click(object sender, EventArgs e)
+        {
+            LoadData();
+        }
     }
 }

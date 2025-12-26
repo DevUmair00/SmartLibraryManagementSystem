@@ -62,6 +62,7 @@
             ViewMember_btn.TabIndex = 53;
             ViewMember_btn.Text = "View All";
             ViewMember_btn.UseVisualStyleBackColor = false;
+            ViewMember_btn.Click += ViewMember_btn_Click;
             // 
             // btnClose
             // 
@@ -262,6 +263,7 @@
             Controls.Add(AN_lbl);
             Name = "AuthorForm";
             Text = "AuthorForm";
+            Load += AuthorForm_Load;
             ((System.ComponentModel.ISupportInitialize)dgvAuthors).EndInit();
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)searchIcon).EndInit();

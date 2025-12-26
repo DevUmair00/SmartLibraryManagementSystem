@@ -28,239 +28,266 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Member_Form));
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            panel1 = new Panel();
+            btnAdd = new Button();
+            btnUpdate = new Button();
+            btnDelete = new Button();
+            btnClear = new Button();
             ViewMember_btn = new Button();
-            Back_M = new Button();
-            MClear_btn = new Button();
-            MUpdate_btn = new Button();
-            MDelete_btn = new Button();
-            MAdd_btn = new Button();
-            BT_box = new TextBox();
-            BISBN_box = new TextBox();
-            viewBookGrid = new DataGridView();
-            member_id = new DataGridViewTextBoxColumn();
-            member_name = new DataGridViewTextBoxColumn();
-            member_email = new DataGridViewTextBoxColumn();
-            membership_date = new DataGridViewTextBoxColumn();
-            BAID_lbl = new Label();
-            BISBN_lbl = new Label();
+            btnClose = new Button();
+            txt_name = new TextBox();
+            txt_email = new TextBox();
+            ANat_lbl = new Label();
             MM_lbl = new Label();
-            MN_lbl = new Label();
-            MDate_Picker = new DateTimePicker();
-            ((System.ComponentModel.ISupportInitialize)viewBookGrid).BeginInit();
+            AN_lbl = new Label();
+            searchIcon = new PictureBox();
+            txtSearch = new TextBox();
+            search_lbl = new Label();
+            dgvMembers = new DataGridView();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)searchIcon).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvMembers).BeginInit();
             SuspendLayout();
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.DimGray;
+            panel1.Controls.Add(btnAdd);
+            panel1.Controls.Add(btnUpdate);
+            panel1.Controls.Add(btnDelete);
+            panel1.Controls.Add(btnClear);
+            panel1.Location = new Point(22, 321);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(331, 156);
+            panel1.TabIndex = 66;
+            // 
+            // btnAdd
+            // 
+            btnAdd.Font = new Font("Arial", 12F, FontStyle.Bold);
+            btnAdd.Location = new Point(12, 24);
+            btnAdd.Name = "btnAdd";
+            btnAdd.Size = new Size(142, 45);
+            btnAdd.TabIndex = 15;
+            btnAdd.Text = "Add";
+            btnAdd.UseVisualStyleBackColor = true;
+            btnAdd.Click += btnAdd_Click;
+            // 
+            // btnUpdate
+            // 
+            btnUpdate.Font = new Font("Arial", 12F, FontStyle.Bold);
+            btnUpdate.Location = new Point(12, 93);
+            btnUpdate.Name = "btnUpdate";
+            btnUpdate.Size = new Size(142, 45);
+            btnUpdate.TabIndex = 17;
+            btnUpdate.Text = "Update";
+            btnUpdate.UseVisualStyleBackColor = true;
+            btnUpdate.Click += btnUpdate_Click;
+            // 
+            // btnDelete
+            // 
+            btnDelete.Font = new Font("Arial", 12F, FontStyle.Bold);
+            btnDelete.Location = new Point(168, 24);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(142, 45);
+            btnDelete.TabIndex = 16;
+            btnDelete.Text = "Delete";
+            btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += btnDelete_Click;
+            // 
+            // btnClear
+            // 
+            btnClear.BackColor = Color.Khaki;
+            btnClear.Font = new Font("Arial", 12F, FontStyle.Bold);
+            btnClear.Location = new Point(168, 93);
+            btnClear.Name = "btnClear";
+            btnClear.Size = new Size(142, 45);
+            btnClear.TabIndex = 18;
+            btnClear.Text = "Clear";
+            btnClear.UseVisualStyleBackColor = false;
+            btnClear.Click += btnClear_Click;
             // 
             // ViewMember_btn
             // 
             ViewMember_btn.BackColor = Color.DarkGray;
             ViewMember_btn.ForeColor = Color.White;
-            ViewMember_btn.Location = new Point(596, 393);
+            ViewMember_btn.Location = new Point(928, 496);
             ViewMember_btn.Name = "ViewMember_btn";
             ViewMember_btn.Size = new Size(91, 33);
-            ViewMember_btn.TabIndex = 39;
+            ViewMember_btn.TabIndex = 65;
             ViewMember_btn.Text = "View All";
             ViewMember_btn.UseVisualStyleBackColor = false;
+            ViewMember_btn.Click += ViewMember_btn_Click;
             // 
-            // Back_M
+            // btnClose
             // 
-            Back_M.BackColor = Color.IndianRed;
-            Back_M.ForeColor = Color.White;
-            Back_M.Location = new Point(693, 393);
-            Back_M.Name = "Back_M";
-            Back_M.Size = new Size(91, 33);
-            Back_M.TabIndex = 38;
-            Back_M.Text = "Back";
-            Back_M.UseVisualStyleBackColor = false;
+            btnClose.BackColor = Color.IndianRed;
+            btnClose.ForeColor = Color.White;
+            btnClose.Location = new Point(1025, 496);
+            btnClose.Name = "btnClose";
+            btnClose.Size = new Size(91, 33);
+            btnClose.TabIndex = 64;
+            btnClose.Text = "Back";
+            btnClose.UseVisualStyleBackColor = false;
+            btnClose.Click += btnClose_Click;
             // 
-            // MClear_btn
+            // txt_name
             // 
-            MClear_btn.BackColor = Color.Khaki;
-            MClear_btn.Location = new Point(312, 393);
-            MClear_btn.Name = "MClear_btn";
-            MClear_btn.Size = new Size(91, 33);
-            MClear_btn.TabIndex = 37;
-            MClear_btn.Text = "Clear";
-            MClear_btn.UseVisualStyleBackColor = false;
+            txt_name.Location = new Point(158, 122);
+            txt_name.Name = "txt_name";
+            txt_name.PlaceholderText = "Full Name";
+            txt_name.Size = new Size(195, 23);
+            txt_name.TabIndex = 63;
             // 
-            // MUpdate_btn
+            // txt_email
             // 
-            MUpdate_btn.Location = new Point(116, 393);
-            MUpdate_btn.Name = "MUpdate_btn";
-            MUpdate_btn.Size = new Size(91, 33);
-            MUpdate_btn.TabIndex = 36;
-            MUpdate_btn.Text = "Update";
-            MUpdate_btn.UseVisualStyleBackColor = true;
+            txt_email.Location = new Point(158, 162);
+            txt_email.Name = "txt_email";
+            txt_email.PlaceholderText = "Email";
+            txt_email.Size = new Size(195, 23);
+            txt_email.TabIndex = 62;
+            txt_email.Text = "@gmail.com";
             // 
-            // MDelete_btn
+            // ANat_lbl
             // 
-            MDelete_btn.Location = new Point(214, 393);
-            MDelete_btn.Name = "MDelete_btn";
-            MDelete_btn.Size = new Size(91, 33);
-            MDelete_btn.TabIndex = 35;
-            MDelete_btn.Text = "Delete";
-            MDelete_btn.UseVisualStyleBackColor = true;
-            // 
-            // MAdd_btn
-            // 
-            MAdd_btn.Location = new Point(12, 393);
-            MAdd_btn.Name = "MAdd_btn";
-            MAdd_btn.Size = new Size(91, 33);
-            MAdd_btn.TabIndex = 34;
-            MAdd_btn.Text = "Add";
-            MAdd_btn.UseVisualStyleBackColor = true;
-            // 
-            // BT_box
-            // 
-            BT_box.Location = new Point(137, 126);
-            BT_box.Name = "BT_box";
-            BT_box.PlaceholderText = "Full Name";
-            BT_box.Size = new Size(137, 23);
-            BT_box.TabIndex = 33;
-            // 
-            // BISBN_box
-            // 
-            BISBN_box.Location = new Point(137, 166);
-            BISBN_box.Name = "BISBN_box";
-            BISBN_box.PlaceholderText = "Email";
-            BISBN_box.Size = new Size(137, 23);
-            BISBN_box.TabIndex = 32;
-            // 
-            // viewBookGrid
-            // 
-            viewBookGrid.AllowUserToAddRows = false;
-            viewBookGrid.AllowUserToDeleteRows = false;
-            viewBookGrid.AllowUserToResizeColumns = false;
-            viewBookGrid.AllowUserToResizeRows = false;
-            viewBookGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            viewBookGrid.Columns.AddRange(new DataGridViewColumn[] { member_id, member_name, member_email, membership_date });
-            viewBookGrid.Location = new Point(289, 90);
-            viewBookGrid.Name = "viewBookGrid";
-            viewBookGrid.RowHeadersVisible = false;
-            viewBookGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            viewBookGrid.Size = new Size(499, 283);
-            viewBookGrid.TabIndex = 29;
-            // 
-            // member_id
-            // 
-            member_id.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            member_id.HeaderText = "ID";
-            member_id.Name = "member_id";
-            member_id.ReadOnly = true;
-            // 
-            // member_name
-            // 
-            member_name.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            member_name.HeaderText = "Name";
-            member_name.Name = "member_name";
-            member_name.ReadOnly = true;
-            // 
-            // member_email
-            // 
-            member_email.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            member_email.HeaderText = "Email";
-            member_email.Name = "member_email";
-            member_email.ReadOnly = true;
-            // 
-            // membership_date
-            // 
-            membership_date.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            membership_date.HeaderText = "Membership Date";
-            membership_date.Name = "membership_date";
-            membership_date.ReadOnly = true;
-            // 
-            // BAID_lbl
-            // 
-            BAID_lbl.AutoSize = true;
-            BAID_lbl.Font = new Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            BAID_lbl.Location = new Point(12, 245);
-            BAID_lbl.Name = "BAID_lbl";
-            BAID_lbl.Size = new Size(171, 20);
-            BAID_lbl.TabIndex = 25;
-            BAID_lbl.Text = "Select Membership Date : ";
-            // 
-            // BISBN_lbl
-            // 
-            BISBN_lbl.AutoSize = true;
-            BISBN_lbl.Font = new Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            BISBN_lbl.Location = new Point(12, 169);
-            BISBN_lbl.Name = "BISBN_lbl";
-            BISBN_lbl.Size = new Size(94, 20);
-            BISBN_lbl.TabIndex = 23;
-            BISBN_lbl.Text = "Enter Email : ";
+            ANat_lbl.AutoSize = true;
+            ANat_lbl.Font = new Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            ANat_lbl.Location = new Point(33, 165);
+            ANat_lbl.Name = "ANat_lbl";
+            ANat_lbl.Size = new Size(94, 20);
+            ANat_lbl.TabIndex = 60;
+            ANat_lbl.Text = "Enter Email : ";
             // 
             // MM_lbl
             // 
             MM_lbl.AutoSize = true;
             MM_lbl.Font = new Font("Arial Black", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            MM_lbl.Location = new Point(235, 25);
+            MM_lbl.Location = new Point(387, 15);
             MM_lbl.Name = "MM_lbl";
             MM_lbl.Size = new Size(433, 50);
-            MM_lbl.TabIndex = 22;
+            MM_lbl.TabIndex = 59;
             MM_lbl.Text = "Member Management";
             // 
-            // MN_lbl
+            // AN_lbl
             // 
-            MN_lbl.AutoSize = true;
-            MN_lbl.Font = new Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            MN_lbl.Location = new Point(12, 129);
-            MN_lbl.Name = "MN_lbl";
-            MN_lbl.Size = new Size(93, 20);
-            MN_lbl.TabIndex = 21;
-            MN_lbl.Text = "Enter Name : ";
+            AN_lbl.AutoSize = true;
+            AN_lbl.Font = new Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            AN_lbl.Location = new Point(33, 125);
+            AN_lbl.Name = "AN_lbl";
+            AN_lbl.Size = new Size(93, 20);
+            AN_lbl.TabIndex = 58;
+            AN_lbl.Text = "Enter Name : ";
             // 
-            // MDate_Picker
+            // searchIcon
             // 
-            MDate_Picker.CalendarFont = new Font("Arial Narrow", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            MDate_Picker.Location = new Point(12, 278);
-            MDate_Picker.Name = "MDate_Picker";
-            MDate_Picker.Size = new Size(217, 23);
-            MDate_Picker.TabIndex = 40;
-            MDate_Picker.ValueChanged += dateTimePicker1_ValueChanged;
+            searchIcon.Image = (Image)resources.GetObject("searchIcon.Image");
+            searchIcon.Location = new Point(1088, 83);
+            searchIcon.Name = "searchIcon";
+            searchIcon.Size = new Size(27, 20);
+            searchIcon.SizeMode = PictureBoxSizeMode.Zoom;
+            searchIcon.TabIndex = 69;
+            searchIcon.TabStop = false;
+            // 
+            // txtSearch
+            // 
+            txtSearch.Location = new Point(879, 81);
+            txtSearch.Name = "txtSearch";
+            txtSearch.PlaceholderText = "Search Member By Name or Email";
+            txtSearch.Size = new Size(238, 23);
+            txtSearch.TabIndex = 68;
+            txtSearch.TextChanged += txtSearch_TextChanged_1;
+            // 
+            // search_lbl
+            // 
+            search_lbl.AutoSize = true;
+            search_lbl.BackColor = Color.Gray;
+            search_lbl.Font = new Font("Arial Black", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            search_lbl.ForeColor = Color.White;
+            search_lbl.Location = new Point(791, 81);
+            search_lbl.Name = "search_lbl";
+            search_lbl.Size = new Size(88, 23);
+            search_lbl.TabIndex = 67;
+            search_lbl.Text = "Search : ";
+            // 
+            // dgvMembers
+            // 
+            dgvMembers.AllowUserToAddRows = false;
+            dgvMembers.AllowUserToDeleteRows = false;
+            dgvMembers.AllowUserToResizeColumns = false;
+            dgvMembers.AllowUserToResizeRows = false;
+            dgvMembers.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.DimGray;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvMembers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dgvMembers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvMembers.EnableHeadersVisualStyles = false;
+            dgvMembers.Location = new Point(433, 112);
+            dgvMembers.Name = "dgvMembers";
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.DimGray;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dgvMembers.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dgvMembers.RowHeadersVisible = false;
+            dgvMembers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvMembers.Size = new Size(693, 378);
+            dgvMembers.TabIndex = 70;
+            dgvMembers.CellClick += dgvMembers_CellClick_1;
             // 
             // Member_Form
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(MDate_Picker);
+            ClientSize = new Size(1138, 545);
+            Controls.Add(dgvMembers);
+            Controls.Add(panel1);
             Controls.Add(ViewMember_btn);
-            Controls.Add(Back_M);
-            Controls.Add(MClear_btn);
-            Controls.Add(MUpdate_btn);
-            Controls.Add(MDelete_btn);
-            Controls.Add(MAdd_btn);
-            Controls.Add(BT_box);
-            Controls.Add(BISBN_box);
-            Controls.Add(viewBookGrid);
-            Controls.Add(BAID_lbl);
-            Controls.Add(BISBN_lbl);
+            Controls.Add(btnClose);
+            Controls.Add(txt_name);
+            Controls.Add(txt_email);
+            Controls.Add(ANat_lbl);
             Controls.Add(MM_lbl);
-            Controls.Add(MN_lbl);
+            Controls.Add(AN_lbl);
+            Controls.Add(searchIcon);
+            Controls.Add(txtSearch);
+            Controls.Add(search_lbl);
             Name = "Member_Form";
             Text = "Member_Form";
-            ((System.ComponentModel.ISupportInitialize)viewBookGrid).EndInit();
+            Load += Member_Form_Load;
+            panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)searchIcon).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvMembers).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
+        private Panel panel1;
+        private Button btnAdd;
+        private Button btnUpdate;
+        private Button btnDelete;
+        private Button btnClear;
         private Button ViewMember_btn;
-        private Button Back_M;
-        private Button MClear_btn;
-        private Button MUpdate_btn;
-        private Button MDelete_btn;
-        private Button MAdd_btn;
-        private TextBox BT_box;
-        private TextBox BISBN_box;
-        private DataGridView viewBookGrid;
-        private Label BAID_lbl;
-        private Label BISBN_lbl;
+        private Button btnClose;
+        private TextBox txt_name;
+        private TextBox txt_email;
+        private Label ANat_lbl;
         private Label MM_lbl;
-        private Label MN_lbl;
-        private DateTimePicker MDate_Picker;
-        private DataGridViewTextBoxColumn member_id;
-        private DataGridViewTextBoxColumn member_name;
-        private DataGridViewTextBoxColumn member_email;
-        private DataGridViewTextBoxColumn membership_date;
+        private Label AN_lbl;
+        private PictureBox searchIcon;
+        private TextBox txtSearch;
+        private Label search_lbl;
+        private DataGridView dgvMembers;
     }
 }

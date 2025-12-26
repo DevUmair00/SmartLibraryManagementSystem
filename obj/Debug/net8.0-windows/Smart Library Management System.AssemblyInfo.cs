@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Smart Library Management System")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c0993dd041ff759f3f23981d8487f01ae77d71bf")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d2470a8dd20e65fa0ea01bc56a56bbd432c0a97d")]
 [assembly: System.Reflection.AssemblyProductAttribute("Smart Library Management System")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Smart Library Management System")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

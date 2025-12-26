@@ -78,6 +78,7 @@
             MM_btn.TabIndex = 3;
             MM_btn.Text = "Member Management";
             MM_btn.UseVisualStyleBackColor = true;
+            MM_btn.Click += MM_btn_Click;
             // 
             // BB_btn
             // 
