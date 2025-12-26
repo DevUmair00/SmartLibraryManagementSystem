@@ -9,18 +9,17 @@ namespace Smart_Library_Management_System.Borrowing
         public int MemberID { get; set; }
         public DateTime BorrowDate { get; set; }
         public DateTime DueDate { get; set; }
-        public DateTime? ReturnDate { get; set; } // Nullable: only filled when book is returned
+        public DateTime? ReturnDate { get; set; } // Nullable
 
-        public BorrowModel() { }
-
-        // Constructor for creating a new borrow record
-        public BorrowModel(int bookId, int memberId, int daysToKeep)
+        // Constructor for New Borrow (Default 14 days)
+        public BorrowModel(int bookId, int memberId)
         {
             BookID = bookId;
             MemberID = memberId;
             BorrowDate = DateTime.Now;
-            DueDate = DateTime.Now.AddDays(daysToKeep);
-            ReturnDate = null;
+            DueDate = DateTime.Now.AddDays(14);
         }
+
+        public BorrowModel() { }
     }
 }

@@ -1,6 +1,7 @@
-﻿using System;
-using System.Data;
+﻿using Smart_Library_Management_System.Books;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,10 +12,12 @@ namespace Smart_Library_Management_System.Authors
     {
         // 1. Reference the Repo Layer
         private readonly AuthorRepo _authorRepo;
+        private readonly BookRepo _bookRepo;
 
         public AuthorService()
         {
             _authorRepo = new AuthorRepo();
+            _bookRepo = new BookRepo(); 
         }
 
         // 2. Logic for Adding an Author
@@ -46,9 +49,17 @@ namespace Smart_Library_Management_System.Authors
             if (authorId <= 0)
                 return "Invalid Author selection.";
 
+            bool hasBooks = _bookRepo.HasBooksByAuthor(authorId);
+
+            if (hasBooks)
+            {
+                return "Cannot delete this author because they still have books registered in the library.";
+            }
+
             bool success = _authorRepo.DeleteAuthor(authorId);
             return success ? "Author removed successfully." : "Failed to remove author.";
         }
+
 
         // 5. Logic for Updating an Author
         public string UpdateExistingAuthor(AuthorModel author)

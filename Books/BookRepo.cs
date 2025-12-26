@@ -52,7 +52,6 @@ namespace Smart_Library_Management_System.Books
             return dt;
         }
 
-
         public bool UpdateBook(BookModel book)
         {
             using (SqlConnection conn = new SqlConnection(Common.Utlis.GET_DB_Connection_String()))
@@ -83,12 +82,21 @@ namespace Smart_Library_Management_System.Books
             }
         }
 
-        public DataTable SearchBooks(string searchTerm)
+        public DataTable SearchBooks(string searchTerm) 
         {
             DataTable dt = new DataTable();
             using (SqlConnection conn = new SqlConnection(Common.Utlis.GET_DB_Connection_String()))
             {
-                string query = "SELECT * FROM Books WHERE Title LIKE @search OR ISBN LIKE @search";
+
+
+                string query = @"SELECT B.BookID, B.Title, B.ISBN,
+                 B.AuthorID,
+                 A.FullName AS [Author Name],
+                 B.Category, B.CurrentStatus 
+                 FROM Books B  
+                 INNER JOIN Authors A ON B.AuthorID = A.AuthorID
+                 WHERE Title LIKE @search OR ISBN LIKE @search OR FullName LIKE @search"; 
+
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@search", "%" + searchTerm + "%");
 
@@ -97,5 +105,99 @@ namespace Smart_Library_Management_System.Books
             }
             return dt;
         }
+
+
+
+
+
+        public DataTable GetBooksByStatus(string status)
+        {
+            DataTable dt = new DataTable();
+            using (SqlConnection conn = new SqlConnection(Utlis.GET_DB_Connection_String()))
+            {
+                // We JOIN with Authors to get FullName
+                // Note: Check your Books table to see if 'Genre' is spelled differently (like 'Category')
+                string query = @"SELECT 
+                            B.BookID, 
+                            B.Title, 
+                            A.FullName AS AuthorName, 
+                            B.ISBN,
+                            B.Category
+                         FROM Books B
+                         INNER JOIN Authors A ON B.AuthorID = A.AuthorID
+                         WHERE B.CurrentStatus = @status";
+
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@status", status);
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+            }
+            return dt;
+        }
+
+        public DataTable SearchAvailableBooks(string term)
+        {
+            DataTable dt = new DataTable();
+            using (SqlConnection conn = new SqlConnection(Utlis.GET_DB_Connection_String()))
+            {
+                // We join the two tables on the AuthorID column
+                string query = @"SELECT 
+                    B.BookID, 
+                    B.Title, 
+                    A.FullName AS AuthorName, 
+                    B.Category, 
+                    B.ISBN 
+                 FROM Books B
+                 INNER JOIN Authors A ON B.AuthorID = A.AuthorID
+                 WHERE B.CurrentStatus = 'Available' 
+                 AND (B.Title LIKE @term 
+                      OR A.FullName LIKE @term 
+                      OR B.Category LIKE @term OR B.ISBN Like @term)";
+
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@term", "%" + term + "%");
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+            }
+            return dt;
+        }
+
+        public bool UpdateBookStatus(int bookId, string status)
+        {
+            using (SqlConnection conn = new SqlConnection(Common.Utlis.GET_DB_Connection_String()))
+            {
+                string query = "UPDATE Books SET CurrentStatus = @status WHERE BookID = @bid";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@status", status);
+                cmd.Parameters.AddWithValue("@bid", bookId);
+
+                conn.Open();
+                return cmd.ExecuteNonQuery() > 0;
+            }
+        }
+
+        public bool HasBooksByAuthor(int authorId)
+        {
+            using (SqlConnection conn = new SqlConnection(Utlis.GET_DB_Connection_String()))
+            {
+                // We use COUNT(1) because it is faster than selecting all data
+                string query = "SELECT COUNT(1) FROM Books WHERE AuthorID = @aid";
+
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@aid", authorId);
+
+                conn.Open();
+                // ExecuteScalar returns the first column of the first row (the count)
+                int count = (int)cmd.ExecuteScalar();
+
+                // If count is greater than 0, the author has books and shouldn't be deleted
+                return count > 0;
+            }
+        }
+
     }
 }
+
+

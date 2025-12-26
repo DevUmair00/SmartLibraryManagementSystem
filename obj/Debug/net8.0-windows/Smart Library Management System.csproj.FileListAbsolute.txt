@@ -69,3 +69,4 @@ E:\Projects\Library Management System\LibraryManagement\bin\Debug\net8.0-windows
 E:\Projects\Library Management System\LibraryManagement\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Diagnostics.EventLog.dll
 E:\Projects\Library Management System\LibraryManagement\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
 E:\Projects\Library Management System\LibraryManagement\obj\Debug\net8.0-windows\Smart Li.CA3989F0.Up2Date
+E:\Projects\Library Management System\LibraryManagement\obj\Debug\net8.0-windows\Smart_Library_Management_System.Borrows.ActiveBorrow.resources

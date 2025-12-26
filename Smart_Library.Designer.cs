@@ -32,8 +32,9 @@
             AM_btn = new Button();
             BM_btn = new Button();
             MM_btn = new Button();
-            BB_btn = new Button();
+            btn_newBorrow = new Button();
             FS_btn = new Button();
+            btn_activeBorrow = new Button();
             SuspendLayout();
             // 
             // SLMS_Label
@@ -50,7 +51,7 @@
             // 
             AM_btn.Font = new Font("Arial Black", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             AM_btn.ForeColor = Color.Black;
-            AM_btn.Location = new Point(252, 126);
+            AM_btn.Location = new Point(51, 114);
             AM_btn.Name = "AM_btn";
             AM_btn.Size = new Size(367, 46);
             AM_btn.TabIndex = 1;
@@ -61,7 +62,7 @@
             // BM_btn
             // 
             BM_btn.Font = new Font("Arial Black", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            BM_btn.Location = new Point(252, 193);
+            BM_btn.Location = new Point(51, 181);
             BM_btn.Name = "BM_btn";
             BM_btn.Size = new Size(367, 46);
             BM_btn.TabIndex = 2;
@@ -72,7 +73,7 @@
             // MM_btn
             // 
             MM_btn.Font = new Font("Arial Black", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            MM_btn.Location = new Point(252, 259);
+            MM_btn.Location = new Point(51, 247);
             MM_btn.Name = "MM_btn";
             MM_btn.Size = new Size(367, 46);
             MM_btn.TabIndex = 3;
@@ -80,39 +81,53 @@
             MM_btn.UseVisualStyleBackColor = true;
             MM_btn.Click += MM_btn_Click;
             // 
-            // BB_btn
+            // btn_newBorrow
             // 
-            BB_btn.Font = new Font("Arial Black", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            BB_btn.Location = new Point(252, 329);
-            BB_btn.Name = "BB_btn";
-            BB_btn.Size = new Size(367, 46);
-            BB_btn.TabIndex = 4;
-            BB_btn.Text = "Borrow Book";
-            BB_btn.UseVisualStyleBackColor = true;
+            btn_newBorrow.Font = new Font("Arial Black", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btn_newBorrow.Location = new Point(424, 139);
+            btn_newBorrow.Name = "btn_newBorrow";
+            btn_newBorrow.Size = new Size(367, 46);
+            btn_newBorrow.TabIndex = 4;
+            btn_newBorrow.Text = "New Borrow";
+            btn_newBorrow.UseVisualStyleBackColor = true;
+            btn_newBorrow.Click += btn_newBorrow_Click;
             // 
             // FS_btn
             // 
             FS_btn.Font = new Font("Arial Black", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            FS_btn.Location = new Point(252, 390);
+            FS_btn.Location = new Point(51, 378);
             FS_btn.Name = "FS_btn";
             FS_btn.Size = new Size(367, 46);
             FS_btn.TabIndex = 5;
             FS_btn.Text = "Fine Section";
             FS_btn.UseVisualStyleBackColor = true;
             // 
+            // btn_activeBorrow
+            // 
+            btn_activeBorrow.Font = new Font("Arial Black", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btn_activeBorrow.Location = new Point(424, 206);
+            btn_activeBorrow.Name = "btn_activeBorrow";
+            btn_activeBorrow.Size = new Size(367, 46);
+            btn_activeBorrow.TabIndex = 6;
+            btn_activeBorrow.Text = "Active Borrow";
+            btn_activeBorrow.UseVisualStyleBackColor = true;
+            btn_activeBorrow.Click += btn_activeBorrow_Click;
+            // 
             // Smart_Library
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btn_activeBorrow);
             Controls.Add(FS_btn);
-            Controls.Add(BB_btn);
+            Controls.Add(btn_newBorrow);
             Controls.Add(MM_btn);
             Controls.Add(BM_btn);
             Controls.Add(AM_btn);
             Controls.Add(SLMS_Label);
             Name = "Smart_Library";
             Text = "Form1";
+            Load += Smart_Library_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -123,7 +138,8 @@
         private Button AM_btn;
         private Button BM_btn;
         private Button MM_btn;
-        private Button BB_btn;
+        private Button btn_newBorrow;
         private Button FS_btn;
+        private Button btn_activeBorrow;
     }
 }

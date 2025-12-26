@@ -1,5 +1,6 @@
 using Smart_Library_Management_System.Authors;
 using Smart_Library_Management_System.Books;
+using Smart_Library_Management_System.Borrows;
 using Smart_Library_Management_System.Members;
 
 namespace Smart_Library_Management_System
@@ -27,6 +28,23 @@ namespace Smart_Library_Management_System
         {
             var memberForm = new Member_Form();
             memberForm.ShowDialog();
+        }
+
+        private void Smart_Library_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_newBorrow_Click(object sender, EventArgs e)
+        {
+            var newBorrow = new BorrowForm();
+            newBorrow.ShowDialog();
+        }
+
+        private void btn_activeBorrow_Click(object sender, EventArgs e)
+        {
+            var activeBorrow = new ActiveBorrow();
+            activeBorrow.ShowDialog();
         }
     }
 }

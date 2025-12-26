@@ -7,6 +7,9 @@
     <Compile Update="Books\BookForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Borrows\ActiveBorrow.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Borrows\BorrowForm.cs">
       <SubType>Form</SubType>
     </Compile>
