@@ -101,6 +101,7 @@
             FS_btn.TabIndex = 5;
             FS_btn.Text = "Fine Section";
             FS_btn.UseVisualStyleBackColor = true;
+            FS_btn.Click += FS_btn_Click;
             // 
             // btn_activeBorrow
             // 

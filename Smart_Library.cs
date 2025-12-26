@@ -1,6 +1,7 @@
 using Smart_Library_Management_System.Authors;
 using Smart_Library_Management_System.Books;
 using Smart_Library_Management_System.Borrows;
+using Smart_Library_Management_System.Fines;
 using Smart_Library_Management_System.Members;
 
 namespace Smart_Library_Management_System
@@ -45,6 +46,12 @@ namespace Smart_Library_Management_System
         {
             var activeBorrow = new ActiveBorrow();
             activeBorrow.ShowDialog();
+        }
+
+        private void FS_btn_Click(object sender, EventArgs e)
+        {
+            var fineForm = new Fine_Form();
+            fineForm.ShowDialog();
         }
     }
 }

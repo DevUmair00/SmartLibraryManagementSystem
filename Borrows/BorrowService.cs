@@ -46,16 +46,6 @@ namespace Smart_Library_Management_System.Borrowing
             return _borrowRrepo.ReturnBook(borrowId, bookId);
         }
 
-        public decimal CalculateFine(DateTime dueDate)
-        {
-            if (DateTime.Now <= dueDate) return 0;
-
-            // Logic: 10.00 per day late
-            TimeSpan difference = DateTime.Now - dueDate;
-            int daysLate = difference.Days;
-
-            return daysLate > 0 ? (decimal)(daysLate * 10.00) : 0;
-        }
 
         public DataTable SearchBorrowsInInventory(string term)
         {
@@ -64,22 +54,5 @@ namespace Smart_Library_Management_System.Borrowing
 
             return _borrowRrepo.SearchActiveBorrows(term.Trim());
         }
-
-
-        //public bool ReturnBook(int borrowId, int bookId)
-        //{
-        //    // 1. Mark the Borrow record as returned
-        //    bool borrowUpdated = _repo.ReturnBook(borrowId);
-
-        //    // 2. Mark the Book as 'Available' again
-        //    // Calling the BookRepo to update the specific BookID
-        //    bool bookUpdated = _bookRepo.UpdateBookStatus(bookId, "Available");
-
-        //    // Returns true only if BOTH database updates were successful
-        //    return borrowUpdated && bookUpdated;
-        //}
-
-
-
     }
 }

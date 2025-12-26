@@ -1,4 +1,6 @@
 ﻿using Smart_Library_Management_System.Borrowing;
+using Smart_Library_Management_System.Fines;
+using Smart_Library_Management_System.Models;
 using System;
 using System.Data;
 using System.Drawing;
@@ -9,11 +11,13 @@ namespace Smart_Library_Management_System.Borrows
     public partial class ActiveBorrow : Form
     {
         private readonly BorrowService _borrowService;
+        private readonly FineService _fineService;
 
         public ActiveBorrow()
         {
             InitializeComponent();
             _borrowService = new BorrowService();
+            _fineService = new FineService();   
             LoadActiveData();
             SetupGrid();
         }
@@ -59,7 +63,7 @@ namespace Smart_Library_Management_System.Borrows
 
 
             // 1. Check for Fines
-            decimal fine = _borrowService.CalculateFine(dueDate);
+            decimal fine = _fineService.CalculateFineAmount(dueDate);
             if (fine > 0)
             {
                 MessageBox.Show($"This book is overdue! Fine: {fine:C}", "Overdue Warning",
@@ -80,6 +84,19 @@ namespace Smart_Library_Management_System.Borrows
                 else
                 {
                     MessageBox.Show("An error occurred while processing the return.");
+                }
+            }
+
+            // 3. If there is a fine, save it to the Fines table first
+            if (fine > 0)
+            {
+                FineModel newFine = new FineModel(borrowId, fine);
+                bool isSaved = _fineService.AddFine(newFine);
+
+                if (isSaved)
+                {
+                    MessageBox.Show($"Overdue fine of {fine:C} has been recorded.", "Fine Logged",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
         }

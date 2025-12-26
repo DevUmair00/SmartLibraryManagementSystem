@@ -28,132 +28,149 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Fine_Form));
             ViewAuthors_btn = new Button();
             Back_A = new Button();
             FPaid_btn = new Button();
-            viewFineGrid = new DataGridView();
+            dgvFines = new DataGridView();
             MM_lbl = new Label();
-            FineID = new DataGridViewTextBoxColumn();
-            MemberId = new DataGridViewTextBoxColumn();
-            BorrowId = new DataGridViewTextBoxColumn();
-            FineAmount = new DataGridViewTextBoxColumn();
-            PaymentStatus = new DataGridViewTextBoxColumn();
-            FinePaid = new DataGridViewButtonColumn();
-            ((System.ComponentModel.ISupportInitialize)viewFineGrid).BeginInit();
+            pictureBox2 = new PictureBox();
+            txtSearch = new TextBox();
+            label2 = new Label();
+            ((System.ComponentModel.ISupportInitialize)dgvFines).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // ViewAuthors_btn
             // 
             ViewAuthors_btn.BackColor = Color.DarkGray;
             ViewAuthors_btn.ForeColor = Color.White;
-            ViewAuthors_btn.Location = new Point(598, 405);
+            ViewAuthors_btn.Location = new Point(938, 497);
             ViewAuthors_btn.Name = "ViewAuthors_btn";
             ViewAuthors_btn.Size = new Size(91, 33);
             ViewAuthors_btn.TabIndex = 69;
             ViewAuthors_btn.Text = "View All";
             ViewAuthors_btn.UseVisualStyleBackColor = false;
+            ViewAuthors_btn.Click += ViewAuthors_btn_Click;
             // 
             // Back_A
             // 
             Back_A.BackColor = Color.IndianRed;
             Back_A.ForeColor = Color.White;
-            Back_A.Location = new Point(695, 405);
+            Back_A.Location = new Point(1035, 497);
             Back_A.Name = "Back_A";
             Back_A.Size = new Size(91, 33);
             Back_A.TabIndex = 68;
             Back_A.Text = "Back";
             Back_A.UseVisualStyleBackColor = false;
+            Back_A.Click += Back_A_Click;
             // 
             // FPaid_btn
             // 
             FPaid_btn.Font = new Font("Arial Black", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             FPaid_btn.ForeColor = Color.DimGray;
-            FPaid_btn.Location = new Point(23, 393);
+            FPaid_btn.Location = new Point(45, 497);
             FPaid_btn.Name = "FPaid_btn";
             FPaid_btn.Size = new Size(121, 45);
             FPaid_btn.TabIndex = 64;
             FPaid_btn.Text = "Paid";
             FPaid_btn.UseVisualStyleBackColor = true;
+            FPaid_btn.Click += FPaid_btn_Click;
             // 
-            // viewFineGrid
+            // dgvFines
             // 
-            viewFineGrid.AllowUserToAddRows = false;
-            viewFineGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            viewFineGrid.Columns.AddRange(new DataGridViewColumn[] { FineID, MemberId, BorrowId, FineAmount, PaymentStatus, FinePaid });
-            viewFineGrid.Location = new Point(14, 78);
-            viewFineGrid.Name = "viewFineGrid";
-            viewFineGrid.RowHeadersVisible = false;
-            viewFineGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            viewFineGrid.Size = new Size(772, 309);
-            viewFineGrid.TabIndex = 60;
+            dgvFines.AllowUserToAddRows = false;
+            dgvFines.AllowUserToDeleteRows = false;
+            dgvFines.AllowUserToResizeColumns = false;
+            dgvFines.AllowUserToResizeRows = false;
+            dgvFines.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.DimGray;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = Color.DimGray;
+            dataGridViewCellStyle1.SelectionForeColor = Color.White;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvFines.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dgvFines.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dgvFines.DefaultCellStyle = dataGridViewCellStyle2;
+            dgvFines.EnableHeadersVisualStyles = false;
+            dgvFines.Location = new Point(27, 96);
+            dgvFines.Name = "dgvFines";
+            dgvFines.ReadOnly = true;
+            dgvFines.RowHeadersVisible = false;
+            dgvFines.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvFines.Size = new Size(1099, 395);
+            dgvFines.TabIndex = 60;
+            dgvFines.DataBindingComplete += dgvFines_DataBindingComplete;
             // 
             // MM_lbl
             // 
             MM_lbl.AutoSize = true;
             MM_lbl.Font = new Font("Arial Black", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            MM_lbl.Location = new Point(216, 9);
+            MM_lbl.Location = new Point(424, 9);
             MM_lbl.Name = "MM_lbl";
             MM_lbl.Size = new Size(361, 50);
             MM_lbl.TabIndex = 70;
             MM_lbl.Text = "Fine Management";
             // 
-            // FineID
+            // pictureBox2
             // 
-            FineID.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            FineID.HeaderText = "Fine ID";
-            FineID.Name = "FineID";
-            FineID.ReadOnly = true;
-            FineID.Resizable = DataGridViewTriState.False;
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(1087, 66);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(28, 23);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 73;
+            pictureBox2.TabStop = false;
             // 
-            // MemberId
+            // txtSearch
             // 
-            MemberId.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            MemberId.HeaderText = "Member ID";
-            MemberId.Name = "MemberId";
-            MemberId.ReadOnly = true;
+            txtSearch.Location = new Point(899, 67);
+            txtSearch.Name = "txtSearch";
+            txtSearch.PlaceholderText = "Search Fine by Name";
+            txtSearch.Size = new Size(217, 23);
+            txtSearch.TabIndex = 72;
+            txtSearch.TextChanged += txtSearch_TextChanged;
             // 
-            // BorrowId
+            // label2
             // 
-            BorrowId.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            BorrowId.HeaderText = "Borrow ID";
-            BorrowId.Name = "BorrowId";
-            BorrowId.ReadOnly = true;
-            BorrowId.Resizable = DataGridViewTriState.False;
-            // 
-            // FineAmount
-            // 
-            FineAmount.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            FineAmount.HeaderText = "Fine Amount";
-            FineAmount.Name = "FineAmount";
-            FineAmount.ReadOnly = true;
-            FineAmount.Resizable = DataGridViewTriState.False;
-            // 
-            // PaymentStatus
-            // 
-            PaymentStatus.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            PaymentStatus.HeaderText = "Payment Status";
-            PaymentStatus.Name = "PaymentStatus";
-            PaymentStatus.ReadOnly = true;
-            // 
-            // FinePaid
-            // 
-            FinePaid.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            FinePaid.HeaderText = "FinePaid";
-            FinePaid.Name = "FinePaid";
+            label2.AutoSize = true;
+            label2.BackColor = Color.Gray;
+            label2.Font = new Font("Arial Black", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(811, 67);
+            label2.Name = "label2";
+            label2.Size = new Size(88, 23);
+            label2.TabIndex = 71;
+            label2.Text = "Search : ";
             // 
             // Fine_Form
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1138, 545);
+            Controls.Add(pictureBox2);
+            Controls.Add(txtSearch);
+            Controls.Add(label2);
             Controls.Add(MM_lbl);
             Controls.Add(ViewAuthors_btn);
             Controls.Add(Back_A);
             Controls.Add(FPaid_btn);
-            Controls.Add(viewFineGrid);
+            Controls.Add(dgvFines);
             Name = "Fine_Form";
             Text = "Fine_Form";
-            ((System.ComponentModel.ISupportInitialize)viewFineGrid).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvFines).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -169,13 +186,10 @@
         private Button AUpdate_btn;
         private Button ADelete_btn;
         private Button FPaid_btn;
-        private DataGridView viewFineGrid;
+        private DataGridView dgvFines;
         private Label MM_lbl;
-        private DataGridViewTextBoxColumn FineID;
-        private DataGridViewTextBoxColumn MemberId;
-        private DataGridViewTextBoxColumn BorrowId;
-        private DataGridViewTextBoxColumn FineAmount;
-        private DataGridViewTextBoxColumn PaymentStatus;
-        private DataGridViewButtonColumn FinePaid;
+        private PictureBox pictureBox2;
+        private TextBox txtSearch;
+        private Label label2;
     }
 }
