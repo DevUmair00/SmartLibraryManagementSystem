@@ -17,7 +17,7 @@ namespace Smart_Library_Management_System.Borrowing
             BookID = bookId;
             MemberID = memberId;
             BorrowDate = DateTime.Now;
-            DueDate = DateTime.Now.AddDays(14);
+            DueDate = DateTime.Now.AddDays(1);
         }
 
         public BorrowModel() { }

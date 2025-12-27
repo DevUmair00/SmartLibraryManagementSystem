@@ -50,7 +50,12 @@ namespace Smart_Library_Management_System.Books
         private void PopulateCategories()
         {
             cmbCategory.Items.AddRange(new string[] { "Fiction", "Science", "History", "Fantasy", "Biography" });
+
+            cmbCategory1.Items.AddRange(new string[] { "Fiction", "Science", "History", "Fantasy", "Biography" });
+
+
             cmbCategory.SelectedIndex = 0;
+            cmbCategory1.SelectedIndex = 0;
         }
 
         private void LoadAuthors()
@@ -182,6 +187,30 @@ namespace Smart_Library_Management_System.Books
         private void BM_lbl_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void cmbCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbCategory1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbCategory1.SelectedIndex == -1)
+                return;
+
+            try
+            {
+                string selectedCategory = cmbCategory1.Text;
+
+                DataTable dt = _bookService.GetBooksByCategory(selectedCategory);
+
+                dgvBooks.DataSource = dt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error filtering books: " + ex.Message);
+            }
         }
     }
 }

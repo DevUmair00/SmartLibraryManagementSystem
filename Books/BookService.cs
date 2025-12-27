@@ -71,6 +71,11 @@ namespace Smart_Library_Management_System.Books
             return _bookRepo.SearchBooks(sanitizedTerm);
         }
 
+        public DataTable GetBooksByCategory(string category)
+        {
+            return _bookRepo.GetBooksByCategory(category);
+        }
+
         public DataTable GetBooksByStatus(string status)
         {
             // You can add business logic here, such as logging or validation

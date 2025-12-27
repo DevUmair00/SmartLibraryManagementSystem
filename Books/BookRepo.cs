@@ -1,11 +1,14 @@
-﻿using System;
+﻿using Microsoft.Data.SqlClient;
+using Smart_Library_Management_System.Common;
+using System;
 using System.Collections.Generic;
 using System.Data;
-using Microsoft.Data.SqlClient;
-using Smart_Library_Management_System.Common;
 using System.Linq;
+using System.Net;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using static System.ComponentModel.Design.ObjectSelectorEditor;
 
 namespace Smart_Library_Management_System.Books
 {
@@ -42,7 +45,7 @@ namespace Smart_Library_Management_System.Books
                 string query = @"SELECT B.BookID, B.Title, B.ISBN,
                  B.AuthorID,
                  A.FullName AS [Author Name],
-                 B.Category, B.CurrentStatus
+                 B.Category, B.CurrentStatus 
                  FROM Books B 
                  INNER JOIN Authors A ON B.AuthorID = A.AuthorID";
 
@@ -196,6 +199,35 @@ namespace Smart_Library_Management_System.Books
                 return count > 0;
             }
         }
+
+
+        public DataTable GetBooksByCategory(string category)
+        {
+            DataTable dt = new DataTable();
+            using (SqlConnection conn = new SqlConnection(Utlis.GET_DB_Connection_String()))
+            {
+                // Make sure "Category" column exists in your Books table
+                string query = @"SELECT 
+                    B.BookID, 
+                    B.Title, 
+                    B.ISBN,
+                    B.AuthorID,
+                    A.FullName AS [Author Name],
+                    B.Category, 
+                    B.CurrentStatus
+                 FROM Books B
+                 INNER JOIN Authors A ON B.AuthorID = A.AuthorID
+                 WHERE B.Category = @category";
+
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@category", category);
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+            }
+            return dt;
+        }
+
 
     }
 }

@@ -50,6 +50,8 @@
             searchIcon = new PictureBox();
             cmbAuthor = new ComboBox();
             panel1 = new Panel();
+            cmbCategory1 = new ComboBox();
+            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvBooks).BeginInit();
             ((System.ComponentModel.ISupportInitialize)searchIcon).BeginInit();
             panel1.SuspendLayout();
@@ -69,7 +71,7 @@
             // 
             BM_lbl.AutoSize = true;
             BM_lbl.Font = new Font("Arial Black", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            BM_lbl.Location = new Point(429, 19);
+            BM_lbl.Location = new Point(386, 9);
             BM_lbl.Name = "BM_lbl";
             BM_lbl.Size = new Size(376, 50);
             BM_lbl.TabIndex = 1;
@@ -114,6 +116,7 @@
             cmbCategory.Name = "cmbCategory";
             cmbCategory.Size = new Size(179, 23);
             cmbCategory.TabIndex = 8;
+            cmbCategory.SelectedIndexChanged += cmbCategory_SelectedIndexChanged;
             // 
             // txtISBN
             // 
@@ -206,7 +209,7 @@
             search_lbl.BackColor = Color.Gray;
             search_lbl.Font = new Font("Arial Black", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             search_lbl.ForeColor = Color.White;
-            search_lbl.Location = new Point(835, 79);
+            search_lbl.Location = new Point(833, 95);
             search_lbl.Name = "search_lbl";
             search_lbl.Size = new Size(88, 23);
             search_lbl.TabIndex = 10;
@@ -230,7 +233,7 @@
             dgvBooks.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvBooks.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvBooks.EnableHeadersVisualStyles = false;
-            dgvBooks.Location = new Point(369, 117);
+            dgvBooks.Location = new Point(370, 131);
             dgvBooks.Name = "dgvBooks";
             dgvBooks.RowHeadersVisible = false;
             dgvBooks.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -241,7 +244,7 @@
             // 
             // txtSearch
             // 
-            txtSearch.Location = new Point(919, 79);
+            txtSearch.Location = new Point(917, 95);
             txtSearch.Name = "txtSearch";
             txtSearch.PlaceholderText = "Search Book By Name or ISBN";
             txtSearch.Size = new Size(207, 23);
@@ -251,7 +254,7 @@
             // searchIcon
             // 
             searchIcon.Image = (Image)resources.GetObject("searchIcon.Image");
-            searchIcon.Location = new Point(1097, 80);
+            searchIcon.Location = new Point(1095, 96);
             searchIcon.Name = "searchIcon";
             searchIcon.Size = new Size(27, 20);
             searchIcon.SizeMode = PictureBoxSizeMode.Zoom;
@@ -279,11 +282,33 @@
             panel1.Size = new Size(331, 156);
             panel1.TabIndex = 24;
             // 
+            // cmbCategory1
+            // 
+            cmbCategory1.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbCategory1.FormattingEnabled = true;
+            cmbCategory1.Location = new Point(506, 98);
+            cmbCategory1.Name = "cmbCategory1";
+            cmbCategory1.Size = new Size(179, 23);
+            cmbCategory1.TabIndex = 26;
+            cmbCategory1.SelectedIndexChanged += cmbCategory1_SelectedIndexChanged;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(370, 98);
+            label1.Name = "label1";
+            label1.Size = new Size(139, 20);
+            label1.TabIndex = 25;
+            label1.Text = "Search By Category :";
+            // 
             // BookForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1138, 545);
+            Controls.Add(cmbCategory1);
+            Controls.Add(label1);
             Controls.Add(cmbAuthor);
             Controls.Add(searchIcon);
             Controls.Add(txtSearch);
@@ -333,5 +358,7 @@
         private PictureBox searchIcon;
         private ComboBox cmbAuthor;
         private Panel panel1;
+        private ComboBox cmbCategory1;
+        private Label label1;
     }
 }

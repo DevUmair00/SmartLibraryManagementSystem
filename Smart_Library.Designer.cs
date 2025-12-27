@@ -41,7 +41,7 @@
             // 
             SLMS_Label.AutoSize = true;
             SLMS_Label.Font = new Font("Arial Black", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            SLMS_Label.Location = new Point(100, 44);
+            SLMS_Label.Location = new Point(401, 49);
             SLMS_Label.Name = "SLMS_Label";
             SLMS_Label.Size = new Size(638, 45);
             SLMS_Label.TabIndex = 0;
@@ -51,7 +51,7 @@
             // 
             AM_btn.Font = new Font("Arial Black", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             AM_btn.ForeColor = Color.Black;
-            AM_btn.Location = new Point(51, 114);
+            AM_btn.Location = new Point(316, 181);
             AM_btn.Name = "AM_btn";
             AM_btn.Size = new Size(367, 46);
             AM_btn.TabIndex = 1;
@@ -62,7 +62,7 @@
             // BM_btn
             // 
             BM_btn.Font = new Font("Arial Black", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            BM_btn.Location = new Point(51, 181);
+            BM_btn.Location = new Point(316, 248);
             BM_btn.Name = "BM_btn";
             BM_btn.Size = new Size(367, 46);
             BM_btn.TabIndex = 2;
@@ -73,7 +73,7 @@
             // MM_btn
             // 
             MM_btn.Font = new Font("Arial Black", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            MM_btn.Location = new Point(51, 247);
+            MM_btn.Location = new Point(316, 314);
             MM_btn.Name = "MM_btn";
             MM_btn.Size = new Size(367, 46);
             MM_btn.TabIndex = 3;
@@ -84,7 +84,7 @@
             // btn_newBorrow
             // 
             btn_newBorrow.Font = new Font("Arial Black", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btn_newBorrow.Location = new Point(424, 139);
+            btn_newBorrow.Location = new Point(747, 181);
             btn_newBorrow.Name = "btn_newBorrow";
             btn_newBorrow.Size = new Size(367, 46);
             btn_newBorrow.TabIndex = 4;
@@ -95,7 +95,7 @@
             // FS_btn
             // 
             FS_btn.Font = new Font("Arial Black", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            FS_btn.Location = new Point(51, 378);
+            FS_btn.Location = new Point(759, 420);
             FS_btn.Name = "FS_btn";
             FS_btn.Size = new Size(367, 46);
             FS_btn.TabIndex = 5;
@@ -106,7 +106,7 @@
             // btn_activeBorrow
             // 
             btn_activeBorrow.Font = new Font("Arial Black", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btn_activeBorrow.Location = new Point(424, 206);
+            btn_activeBorrow.Location = new Point(747, 248);
             btn_activeBorrow.Name = "btn_activeBorrow";
             btn_activeBorrow.Size = new Size(367, 46);
             btn_activeBorrow.TabIndex = 6;
@@ -118,7 +118,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1138, 545);
             Controls.Add(btn_activeBorrow);
             Controls.Add(FS_btn);
             Controls.Add(btn_newBorrow);
@@ -127,6 +127,7 @@
             Controls.Add(AM_btn);
             Controls.Add(SLMS_Label);
             Name = "Smart_Library";
+            ShowInTaskbar = false;
             Text = "Form1";
             Load += Smart_Library_Load;
             ResumeLayout(false);
