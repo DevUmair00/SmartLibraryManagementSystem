@@ -290,6 +290,7 @@
             Controls.Add(panel1);
             Controls.Add(pictureBox1);
             Name = "AuthorForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "AuthorForm";
             Load += AuthorForm_Load;
             ((System.ComponentModel.ISupportInitialize)dgvAuthors).EndInit();

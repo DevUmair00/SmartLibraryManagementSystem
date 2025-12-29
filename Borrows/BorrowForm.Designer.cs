@@ -233,6 +233,7 @@
             Controls.Add(panel2);
             Controls.Add(pictureBox3);
             Name = "BorrowForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "BorrowForm";
             ((System.ComponentModel.ISupportInitialize)dgvAvailableBooks).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvMembers).EndInit();

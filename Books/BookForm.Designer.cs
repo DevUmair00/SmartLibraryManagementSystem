@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BookForm));
             BT_lbl = new Label();
             BM_lbl = new Label();
@@ -173,14 +173,14 @@
             dgvBooks.AllowUserToResizeRows = false;
             dgvBooks.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvBooks.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = Color.DimGray;
-            dataGridViewCellStyle10.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle10.ForeColor = Color.White;
-            dataGridViewCellStyle10.SelectionBackColor = Color.DimGray;
-            dataGridViewCellStyle10.SelectionForeColor = Color.White;
-            dataGridViewCellStyle10.WrapMode = DataGridViewTriState.True;
-            dgvBooks.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.DimGray;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = Color.DimGray;
+            dataGridViewCellStyle1.SelectionForeColor = Color.White;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvBooks.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvBooks.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvBooks.EnableHeadersVisualStyles = false;
             dgvBooks.Location = new Point(370, 131);
@@ -356,6 +356,7 @@
             Controls.Add(panel2);
             Controls.Add(pictureBox1);
             Name = "BookForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "BookForm";
             Load += BookForm_Load;
             ((System.ComponentModel.ISupportInitialize)dgvBooks).EndInit();

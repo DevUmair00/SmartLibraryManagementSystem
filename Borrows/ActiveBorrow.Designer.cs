@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ActiveBorrow));
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             searchIcon = new PictureBox();
             SearchBox = new TextBox();
             search_lbl = new Label();
@@ -83,14 +83,14 @@
             dgvActiveBorrows.AllowUserToResizeColumns = false;
             dgvActiveBorrows.AllowUserToResizeRows = false;
             dgvActiveBorrows.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.DimGray;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = Color.DimGray;
-            dataGridViewCellStyle2.SelectionForeColor = Color.White;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dgvActiveBorrows.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.DimGray;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = Color.DimGray;
+            dataGridViewCellStyle1.SelectionForeColor = Color.White;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvActiveBorrows.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvActiveBorrows.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvActiveBorrows.EnableHeadersVisualStyles = false;
             dgvActiveBorrows.Location = new Point(53, 114);
@@ -181,6 +181,7 @@
             Controls.Add(panel2);
             Controls.Add(pictureBox1);
             Name = "ActiveBorrow";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "ActiveBorrow";
             Load += ActiveBorrow_Load;
             ((System.ComponentModel.ISupportInitialize)searchIcon).EndInit();

@@ -17,15 +17,14 @@ namespace Smart_Library_Management_System.Fines
             _fineRepo = new FineRepo();
         }
 
-
         public decimal CalculateFineAmount(DateTime dueDate)
         {
-            if (DateTime.Now <= dueDate) return 0;
 
-            int daysLate = (DateTime.Now - dueDate).Days;
-
+            int daysLate = (DateTime.Today - dueDate).Days;
             return daysLate > 0 ? (decimal)(daysLate * 10.00) : 0;
+
         }
+
 
         public bool AddFine(FineModel fine)
         {

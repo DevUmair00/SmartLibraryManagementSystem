@@ -61,34 +61,29 @@ namespace Smart_Library_Management_System.Borrows
 
             DateTime dueDate = Convert.ToDateTime(dgvActiveBorrows.CurrentRow.Cells["DueDate"].Value);
 
-
             // 1. Check for Fines
-            decimal fine = _fineService.CalculateFineAmount(dueDate);
-            if (fine > 0)
-            {
-                MessageBox.Show($"This book is overdue! Fine: {fine:C}", "Overdue Warning",
-                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
+            decimal fine = _fineService.CalculateFineAmount(dueDate.Date);
 
-            // 2. Execute Return
-            var confirm = MessageBox.Show("Confirm book return?", "Confirm", MessageBoxButtons.YesNo);
+            MessageBox.Show(fine.ToString(), "Confirm" , MessageBoxButtons.OK);
 
-            if (confirm == DialogResult.Yes)
+
+            string message = (fine > 0) ? $"Fine: {fine:C}. Confirm Return?" : "Confirm Return?";
+
+            if (MessageBox.Show(message, "Confirm", MessageBoxButtons.YesNo , MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 bool success = _borrowService.ProcessReturn(borrowId, bookId);
+
                 if (success)
                 {
-                    MessageBox.Show("Book returned successfully.");
-                    LoadActiveData(); // Refresh the list to remove the returned book
+                    MessageBox.Show("Done! \nBook returned successfully.");
+                    LoadActiveData(); // Refresh the grid 
                 }
                 else
                 {
                     MessageBox.Show("An error occurred while processing the return.");
                 }
             }
-
-            // 3. If there is a fine, save it to the Fines table first
-            if (fine > 0)
+            else
             {
                 FineModel newFine = new FineModel(borrowId, fine);
                 bool isSaved = _fineService.AddFine(newFine);

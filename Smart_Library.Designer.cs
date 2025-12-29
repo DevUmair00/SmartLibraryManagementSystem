@@ -167,6 +167,7 @@
             Controls.Add(pictureBox1);
             Name = "Smart_Library";
             ShowInTaskbar = false;
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             Load += Smart_Library_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

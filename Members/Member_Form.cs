@@ -50,19 +50,25 @@ namespace Smart_Library_Management_System.Members
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            var member = new MemberModel
+            try
             {
-                FullName = txt_name.Text,
-                Email = txt_email.Text
-                // MembershipDate is handled by DateTime.Now in Model/Repo
-            };
+                var member = new MemberModel
+                {   
+                    FullName = txt_name.Text,
+                    Email = txt_email.Text
+                    // MembershipDate is handled by DateTime.Now in Model/Repo
+                };
 
-            string result = _memberService.RegisterMember(member);
-            MessageBox.Show(result);
+                string result = _memberService.RegisterMember(member);
+                MessageBox.Show(result);
 
-            if (result == "Success")
-            {
-                RefreshUI();
+                if (result == "Success")
+                {
+                    RefreshUI();
+                }
+            }
+            catch {
+                MessageBox.Show("Error in Adding Member \nUse Different or Correct Email", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -88,18 +94,24 @@ namespace Smart_Library_Management_System.Members
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (_selectedMemberId == 0)
+            try
             {
-                MessageBox.Show("Please select a member to delete.");
-                return;
-            }
+                if (_selectedMemberId == 0)
+                {
+                    MessageBox.Show("Please select a member to delete.");
+                    return;
+                }
 
-            var confirm = MessageBox.Show("Are you sure you want to delete this member?", "Confirm", MessageBoxButtons.YesNo);
-            if (confirm == DialogResult.Yes)
-            {
-                string result = _memberService.RemoveMember(_selectedMemberId);
-                MessageBox.Show(result);
-                RefreshUI();
+                var confirm = MessageBox.Show("Are you sure you want to delete this member?", "Confirm", MessageBoxButtons.YesNo);
+                if (confirm == DialogResult.Yes)
+                {
+                    string result = _memberService.RemoveMember(_selectedMemberId);
+                    MessageBox.Show(result);
+                    RefreshUI();
+                }
+            }
+            catch (Exception ex) {
+                MessageBox.Show("This Member Currently Borrowed a Book.\nYou Cannot Delete it.");
             }
         }
 

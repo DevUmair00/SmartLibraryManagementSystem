@@ -76,7 +76,7 @@ namespace Smart_Library_Management_System.Authors
             DataTable dt = new DataTable();
             using (SqlConnection conn = new SqlConnection(Common.Utlis.GET_DB_Connection_String()))
             {
-                string query = "SELECT * FROM Authors WHERE FullName LIKE @search OR Nationality LIKE @search";
+                string query = "SELECT * FROM Authors WHERE FullName LIKE @search OR Nationality LIKE @search"; 
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@search", "%" + searchTerm + "%");
 

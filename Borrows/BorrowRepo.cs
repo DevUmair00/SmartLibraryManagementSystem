@@ -94,6 +94,7 @@ namespace Smart_Library_Management_System.Borrowing
                     {
                         // 1. Update the Borrow Record
                         string updateBorrowSql = "UPDATE Borrow SET ReturnDate = GETDATE() WHERE BorrowID = @bid";
+
                         SqlCommand cmd1 = new SqlCommand(updateBorrowSql, conn, transaction);
                         cmd1.Parameters.AddWithValue("@bid", borrowId);
                         cmd1.ExecuteNonQuery();

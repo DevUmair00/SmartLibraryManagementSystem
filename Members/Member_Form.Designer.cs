@@ -167,7 +167,7 @@
             // 
             MM_lbl.AutoSize = true;
             MM_lbl.Font = new Font("Arial Black", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            MM_lbl.Location = new Point(387, 15);
+            MM_lbl.Location = new Point(387, 4);
             MM_lbl.Name = "MM_lbl";
             MM_lbl.Size = new Size(433, 50);
             MM_lbl.TabIndex = 59;
@@ -284,6 +284,7 @@
             Controls.Add(panel2);
             Controls.Add(pictureBox1);
             Name = "Member_Form";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Member_Form";
             Load += Member_Form_Load;
             panel1.ResumeLayout(false);
